@@ -1,0 +1,63 @@
+<diagram program="umletino" version="14.3.0"><zoom_level>10</zoom_level><help_text>Space for diagram &lt;&lt;Extends&gt;&gt;notes</help_text><element><id>UMLClass</id><coordinates><x>80</x><y>305</y><w>210</w><h>160</h></coordinates><panel_attributes>Giocatore
+--
+- nome: string
+- posizione : int
+--
++ giocatore(nome,posizione): void
++ spostati(dado) : void
++ Interrompi():void
++ toString():string
+--
+Responsabilita
+Gioca e divertiti</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>350</x><y>625</y><w>260</w><h>120</h></coordinates><panel_attributes>CasellaSpeciale
+--
+
+--
++ isSpeciale() : boolean
++ setSpeciale(tipo, speciale, giocatore) : void
+--
+Responsabilita
+Descrivere l'effetto della speciale</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>170</x><y>460</y><w>70</w><h>160</h></coordinates><panel_attributes>lt=&lt;.
+&lt;&lt;Uses&gt;&gt;</panel_attributes><additional_attributes>10;140;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>350</x><y>440</y><w>210</w><h>130</h></coordinates><panel_attributes>Casella
+--
+# tipo: string
+--
++ SavePosizione(giocatore) : void
++ toString(): string
++ IsOccupata() : boolean
+--
+Responsabilita
+Salva la posizione del giocatore</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>360</x><y>210</y><w>70</w><h>90</h></coordinates><panel_attributes>lt=&lt;.
+&lt;&lt;Uses&gt;&gt;</panel_attributes><additional_attributes>10;70;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>240</x><y>210</y><w>70</w><h>110</h></coordinates><panel_attributes>lt=&lt;.
+&lt;&lt;Uses&gt;&gt;</panel_attributes><additional_attributes>10;90;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>80</x><y>605</y><w>210</w><h>130</h></coordinates><panel_attributes>Dado
+--
+- risultato : short
+--
++ lancia () : int
++ getRisultato() : short
++ toString(): int 
+--
+Responsabilita
+Restituisce un valore da 1 a 6</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>450</x><y>370</y><w>30</w><h>90</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;70</additional_attributes></element><element><id>Relation</id><coordinates><x>440</x><y>560</y><w>30</w><h>80</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;60;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>220</x><y>30</y><w>170</w><h>190</h></coordinates><panel_attributes>Partita
+--
+- classifica [ ] : Giocatore
+--
++ Gioca():void
++ Salva():void
++ Riprendi():void
++ toString():string
++Main() : void
+--
+Responsabilita
+Fai giocare
+Salva la partita
+Riprendi la partita
+group=1</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>340</x><y>280</y><w>210</w><h>100</h></coordinates><panel_attributes>Campo
+--
+- c [63] : Casella
+--
++ doEffects(casella,giocatore) : void
+--
+Controlla se una casella è speciale
+Applicare effetti/regole
+</panel_attributes><additional_attributes></additional_attributes></element></diagram>
