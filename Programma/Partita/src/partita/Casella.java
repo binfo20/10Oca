@@ -10,5 +10,5 @@ package partita;
  * @author famig
  */
 public class Casella {
-    System.out.println("FAFO");
+
 }
