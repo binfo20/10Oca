@@ -1,14 +1,17 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package partita;
-
-/**
- *
- * @author famig
- */
+import java.util.Random;
 public class Dado {
-    
+    public Dado(int s){
+        facce = s;
+        generatore = new Random();
+    }
+    public Dado(){
+        facce = 4;
+        generatore = new Random();
+    }
+    public int lancia(){
+        return 1 + generatore.nextInt(facce);
+    }
+    private Random generatore;
+    private int facce;
 }
