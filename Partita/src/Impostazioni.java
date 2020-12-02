@@ -1,2 +1,7 @@
-public class Impostazioni {
+import java.io.Serializable;
+
+public class Impostazioni implements Serializable {
+
+
+
 }
