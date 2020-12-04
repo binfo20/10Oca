@@ -7,7 +7,7 @@ public class Dado implements Serializable {
         generatore = new Random();
     }
     public Dado(){
-        facce = 4;
+        facce = 6;
         generatore = new Random();
     }
     public int lancia(){
