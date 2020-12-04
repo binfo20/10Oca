@@ -1,13 +1,16 @@
 import java.io.Serializable;
+import static java.lang.System.*;
 
 public class Partita implements Serializable {
 
     public static void main (String[] args) {
-        System.out.println("Sono il Main!");
+        out.println("Sono il Main!");
         Giocatore g = new Giocatore("Mario");
         Dado d = new Dado();
+        d.lancia();
+        out.println(d.toString());
         Impostazioni i = new Impostazioni();
-        System.out.println(i.Salva(g));
+        out.println(i.Salva(g));
     }
 
 }
