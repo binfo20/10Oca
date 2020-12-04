@@ -7,5 +7,13 @@ public class Impostazioni implements Serializable {
         return "Salvo "+ g.toString() ;
     }
 
+    public String Riprendi(Giocatore g){
 
+        return "Salvo "+ g.toString() ;
+    }
+
+    public String Esci(Giocatore g){
+
+        return "Salvo "+ g.toString() ;
+    }
 }
