@@ -2,8 +2,8 @@ import java.io.Serializable;
 
 public class Giocatore implements Serializable {
 
-    private String nome;
-    private int posizione;
+    String nome;
+    int posizione;
 
     public Giocatore(String nome, int posizione) {
         this.nome = nome;

@@ -46,6 +46,6 @@ public class Impostazioni implements Serializable {
     }
 
     public String Esci(){
-        return null;
+        return "PARTITA FINITA";
     }
 }

@@ -15,6 +15,7 @@ public class Partita implements Serializable {
         out.println(i.Salva(b));
         out.println(i.Riprendi(m));
         out.println(i.Riprendi(b));
+        out.println(i.Esci());
     }
 
 }
