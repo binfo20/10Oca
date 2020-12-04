@@ -14,7 +14,6 @@ public class Dado implements Serializable {
     public String toString() {
         return "Dado{" +
                 "risultato=" + risultato +
-                ", facce=" + facce +
                 '}';
     }
 }
