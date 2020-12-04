@@ -2,17 +2,31 @@ import java.io.Serializable;
 
 public class Giocatore implements Serializable {
 
-    String nome;
+    private String nome;
+    private int posizione;
 
-    public Giocatore(String nome) {
+    public Giocatore(String nome, int posizione) {
         this.nome = nome;
+        this.posizione = posizione;
     }
 
+    public void SavePosizione() {
+
+    }
+
+    public void Spostati(int posizione){
+
+    }
+
+    public void Interrompi() {
+
+    }
 
     @Override
     public String toString() {
         return "Giocatore{" +
                 "nome='" + nome + '\'' +
+                ", posizione=" + posizione +
                 '}';
     }
 }
