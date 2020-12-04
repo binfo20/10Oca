@@ -5,6 +5,7 @@ public class Dado implements Serializable {
     public short risultato;
     private short facce = 6;
     private Random generatore = new Random();
+
     public int lancia(){
         return 1 + generatore.nextInt(facce);
     }
