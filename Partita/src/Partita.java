@@ -11,6 +11,7 @@ public class Partita implements Serializable {
         out.println(d.toString());
         Impostazioni i = new Impostazioni();
         out.println(i.Salva(g));
+        out.println(i.Riprendi(g));
     }
 
 }

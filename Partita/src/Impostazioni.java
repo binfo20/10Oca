@@ -28,7 +28,7 @@ public class Impostazioni implements Serializable {
     public String Riprendi(Giocatore g){
         ObjectInputStream ois = null;
         try{
-            ois = new ObjectInputStream(new FileInputStream("Giocatore "+g+".dat"));
+            ois = new ObjectInputStream(new FileInputStream("Giocatore "+g.nome+".dat"));
         }catch(FileNotFoundException e){
 
         } catch (IOException e) {
