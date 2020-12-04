@@ -47,6 +47,6 @@ public class Impostazioni implements Serializable {
 
     public String Esci(Giocatore g){
         g = null;
-        return "Esce "+ g.toString() ;
+        return "Esce dal gioco"+ g.toString() ;
     }
 }
