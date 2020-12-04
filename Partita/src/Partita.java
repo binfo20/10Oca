@@ -5,13 +5,16 @@ public class Partita implements Serializable {
 
     public static void main (String[] args) {
         out.println("Sono il Main!");
-        Giocatore g = new Giocatore("Mario");
+        Giocatore m = new Giocatore("Mario");
+        Giocatore b = new Giocatore("Bartolo");
         Dado d = new Dado();
         d.lancia();
         out.println(d.toString());
         Impostazioni i = new Impostazioni();
-        out.println(i.Salva(g));
-        out.println(i.Riprendi(g));
+        out.println(i.Salva(m));
+        out.println(i.Salva(b));
+        out.println(i.Riprendi(m));
+        out.println(i.Riprendi(b));
     }
 
 }
