@@ -4,10 +4,10 @@ import java.util.Random;
 public class Dado implements Serializable {
     public short risultato;
     private short facce = 6;
-    private Random generatore = new Random();
 
-    public int lancia(){
-        return 1 + generatore.nextInt(facce);
+    public short lancia(){
+        risultato = (short)(Math.random() * facce + 1);
+        return risultato;
     }
 
     @Override
