@@ -1,4 +1,5 @@
 import java.io.Serializable;
+import java.util.Random;
 
 public class Dado implements Serializable {
     public short risultato;
@@ -15,4 +16,7 @@ public class Dado implements Serializable {
                 "risultato=" + risultato +
                 '}';
     }
+
+    private Random generatore;
+
 }
