@@ -2,9 +2,9 @@ import java.io.Serializable;
 
 public class Giocatore implements Serializable {
 
-    String nome;
-    int posizione;
-    boolean inGioco=true;
+    public String nome;
+    public int posizione;
+    public boolean inGioco;
 
     public Giocatore(String nome, int posizione) {
         this.nome = nome;
@@ -28,7 +28,6 @@ public class Giocatore implements Serializable {
         return "Giocatore{" +
                 "nome='" + nome + '\'' +
                 ", posizione=" + posizione +
-                ", inGioco=" + inGioco +
                 '}';
     }
 }
