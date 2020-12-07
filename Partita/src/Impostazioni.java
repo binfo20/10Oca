@@ -1,6 +1,6 @@
 import java.io.*;
 
-public class Impostazioni implements Serializable {
+public class Impostazioni implements Serializable{
 
     public String Salva(Giocatore g){
         ObjectOutputStream output =null;

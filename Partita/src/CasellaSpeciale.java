@@ -1,5 +1,5 @@
-import java.io.Serializable;
 
-public class CasellaSpeciale implements Serializable {
+
+public class CasellaSpeciale extends Casella{
 
 }

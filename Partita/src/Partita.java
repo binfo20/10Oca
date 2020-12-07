@@ -1,5 +1,4 @@
-import java.io.Serializable;
-import static java.lang.System.*;
+import static java.lang.System.out;
 
 /***
  * MI pare andiamo bene.
@@ -11,7 +10,21 @@ import static java.lang.System.*;
  * creare il metodo isSpeciale()
  */
 
-public class Partita implements Serializable {
+public class Partita {
+    Giocatore classifica[] = new Giocatore[4];
+    boolean Gioco=true;
+
+    public boolean isGioco() {
+        return Gioco;
+    }
+
+    public void setGioco(boolean gioco) {
+        Gioco = gioco;
+    }
+
+    public void setClassifica(Giocatore[] classifica) {
+        this.classifica = classifica;
+    }
 
     public static void main (String[] args) {
         out.println("Sono il Main!");

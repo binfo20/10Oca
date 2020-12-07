@@ -1,11 +1,11 @@
 import java.io.Serializable;
 
 public class Casella  implements Serializable {
-    String casella;
+    String tipo;
 
 
     public String toString() {
         return "Casella{" +
-                "casella='" + casella ;};
-    }
+                "tipo='" + tipo ;}
+}
 
