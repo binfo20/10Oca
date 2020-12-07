@@ -1,7 +1,7 @@
 import java.io.Serializable;
 
 public class Casella  implements Serializable {
-    String tipo;
+    String tipo = "Normale";
 
 
     public String toString() {

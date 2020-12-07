@@ -1,4 +1,4 @@
-import java.util.Random;
+
 
 public class Dado {
     public short risultato;
@@ -15,7 +15,4 @@ public class Dado {
                 "risultato=" + risultato +
                 '}';
     }
-
-    private Random generatore;
-
 }
