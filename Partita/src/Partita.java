@@ -5,7 +5,7 @@ import static java.lang.System.out;
  * Manca il javadoc
  * Togliete i file .class dal controllo di git, è inutile e spreca banda
  * (cfr. gitignore)
- * Riguardardate l'idea "CasellaSpecilae". Al momento non c'è tatnto,
+ * Riguardardate l'idea "CasellaSpeciale". Al momento non c'è tanto,
  * serve solo a marcare la sua esistenza (e potete usare .getClass() senza
  * creare il metodo isSpeciale()
  */
