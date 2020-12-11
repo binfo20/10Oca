@@ -2,6 +2,12 @@ import java.io.*;
 
 public class Impostazioni implements Serializable{
 
+    /**
+     Funzione Salva
+     Parametro Giocatore g
+     Variabile di ritorno String
+     Crea un file.dat chiamato col nome del giocatore
+    */
     public String Salva(Giocatore g){
         ObjectOutputStream output =null;
         try{
@@ -25,6 +31,12 @@ public class Impostazioni implements Serializable{
         return "Salvo "+ g.toString() ;
     }
 
+    /**
+     Funzione Riprendi
+     Parametro Giocatore g
+     Variabile di ritorno String
+     Riprende un file.dat chiamato col nome del giocatore
+     */
     public String Riprendi(Giocatore g){
         ObjectInputStream ois = null;
         try{
@@ -45,6 +57,11 @@ public class Impostazioni implements Serializable{
         return "Riprende a giocare "+ g.toString() ;
     }
 
+    /**
+     Funzione Esci
+     Variabile di ritorno String
+     Finisce la partita //da finire, aspetto le altre classi per le prove
+     */
     public String Esci(){
         return "PARTITA FINITA";
     }

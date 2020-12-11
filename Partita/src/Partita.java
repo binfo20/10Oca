@@ -2,7 +2,7 @@ import static java.lang.System.out;
 
 /***
  * MI pare andiamo bene.
- * Manca il javadoc
+ * Manca il javadoc --> Messo
  * Togliete i file .class dal controllo di git, è inutile e spreca banda
  * (cfr. gitignore)
  * Riguardardate l'idea "CasellaSpeciale". Al momento non c'è tanto,
@@ -11,8 +11,8 @@ import static java.lang.System.out;
  */
 
 public class Partita {
-    Giocatore classifica[] = new Giocatore[4];
-    boolean Gioco=true;
+    Giocatore classifica[] = new Giocatore[4]; /**classifica dei giocatori*/
+    boolean Gioco=true; /**Effettuo dei controlli tramite questa variabile*/
 
     public boolean isGioco() {
         return Gioco;
@@ -27,6 +27,10 @@ public class Partita {
     }
 
     public static void main (String[] args) {
+        /**
+         * Per ora il main crea un giocatore ed un dado, lo lancia,
+         * le impostazioni salvano il giocatore e lo riprendono
+         * */
         out.println("Sono il Main!");
         Giocatore m = new Giocatore("Mario", 1);
         Giocatore b = new Giocatore("Bartolo", 7);
