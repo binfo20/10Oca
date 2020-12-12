@@ -32,17 +32,18 @@ public class Partita {
          * le impostazioni salvano il giocatore e lo riprendono
          * */
         out.println("Sono il Main!");
-        Giocatore m = new Giocatore("Mario", 1);
-        Giocatore b = new Giocatore("Bartolo", 7);
+        Giocatore [] g = new Giocatore[4];
+        g[1] = new Giocatore("Bartolo",1);
+        g[0] = new Giocatore("Mario",3);
         Dado d = new Dado();
         d.lancia();
         out.println(d.toString());
         Impostazioni i = new Impostazioni();
-        out.println(i.Salva(m));
-        out.println(i.Salva(b));
-        out.println(i.Riprendi(m));
-        out.println(i.Riprendi(b));
-        out.println(i.Esci());
+        out.println(i.Salva(g[0]));
+        out.println(i.Salva(g[1]));
+        out.println(i.Riprendi(g[0]));
+        out.println(i.Riprendi(g[1]));
+        out.println(i.Esci(g));
     }
 
 }

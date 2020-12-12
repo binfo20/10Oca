@@ -54,6 +54,7 @@ public class Impostazioni implements Serializable{
         } catch (ClassNotFoundException e1) {
             e1.printStackTrace();
         }
+        g.inGioco=true;
         return "Riprende a giocare "+ g.toString() ;
     }
 
@@ -62,7 +63,8 @@ public class Impostazioni implements Serializable{
      Variabile di ritorno String
      Finisce la partita //da finire, aspetto le altre classi per le prove
      */
-    public String Esci(){
+    public String Esci(Giocatore[] g){
+        for(int i=0;i<4;i++)if(g[i]!=null)g[i].inGioco=false;
         return "PARTITA FINITA";
     }
 }
