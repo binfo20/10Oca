@@ -87,16 +87,7 @@ public class Main {
         d.lancia();
         out.println(d.toString());
         g[j].Spostati(d.risultato);
-        /*switch (tab.c[g[j].posizione].tipo==){
-            case 6:
-            case 19:
-            case 31: 
-            case 42: 
-            case 52:
-            case 58:
-            case 63:                  
-        }
-*/
+        
         tab.doEffects(g, j);
         
         
