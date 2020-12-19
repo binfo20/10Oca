@@ -55,14 +55,14 @@ public class Main {
          * Per ora il main crea un giocatore ed un dado, lo lancia,
          * le impostazioni salvano il giocatore e lo riprendono
          * */
-        int n_giocatori;
+        int nGiocatori;
         String nom;
          String risposta=" ";
          boolean controll=false;
         Giocatore [] g = new Giocatore[4];
         System.out.println("Quanti giocatori partecipano?");
-        n_giocatori=in.nextInt();
-        for(int i=0;i<n_giocatori;i++){
+        nGiocatori=in.nextInt();
+        for(int i=0;i<nGiocatori;i++){
         System.out.println("Inserisci il nome del  partecipante");
                   nom=in.next();
                   g[i] = new Giocatore(nom,1);
@@ -70,11 +70,12 @@ public class Main {
         Dado d = new Dado();
         Campo tab= new Campo();
         while( controll=false  ){
-        for(int j=0;j<n_giocatori;j++){
+        for(int j=0;j<nGiocatori;j++){
             
           if (g[j].inGioco==false){
-          break;    
+          tab.doEffects(g, j,nGiocatori);
           }
+          else{
          System.out.println("vuoi continuare? si/no"); 
          while(risposta != "si" && risposta != "no"){
          System.out.println("Inserisci la risposta, si o no?"); 
@@ -87,8 +88,10 @@ public class Main {
         d.lancia();
         out.println(d.toString());
         g[j].Spostati(d.risultato);
-        
-        tab.doEffects(g, j);
+        if(g[j].posizione==31 || g[j].posizione==52){
+         g[j].inGioco=false;   
+        }
+        tab.doEffects(g, j,nGiocatori);
         
         
         
@@ -96,8 +99,9 @@ public class Main {
         break;    
         }
         
+          }
         }
-        for(int l=0; l<n_giocatori;l++){
+        for(int l=0; l<nGiocatori;l++){
         if(g[l].posizione<=63){
         System.out.println(g[l].nome + "Hai vinto!"); 
         controll=true;  
