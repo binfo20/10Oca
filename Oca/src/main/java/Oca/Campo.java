@@ -48,12 +48,7 @@ public class Campo {
                g[i].posizione++;
                }
             }
-            
-            
-            
-            
-            
-            
+      
         }
         
         public void Pause(Giocatore g[],int j){
@@ -67,6 +62,12 @@ public class Campo {
      
        
                         }
+        
+        
+         
+        
+        
+        
         
         
         
