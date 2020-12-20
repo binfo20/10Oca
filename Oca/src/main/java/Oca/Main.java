@@ -10,17 +10,9 @@ package Oca;
  * @author gramm
  */
 import static java.lang.System.out;
+
+import java.util.ArrayList;
 import java.util.Scanner;
-
-
-
-
-
-
-
-
-
-
 
 
 /***
@@ -34,7 +26,7 @@ import java.util.Scanner;
  */
 
 public class Main {
-    Giocatore classifica[] = new Giocatore[4]; /**classifica dei giocatori*/
+    ArrayList <Giocatore> classifica = new ArrayList<>(4); /**classifica dei giocatori*/
     boolean Gioco=true; /**Effettuo dei controlli tramite questa variabile*/
 
     public boolean isGioco() {
@@ -45,7 +37,7 @@ public class Main {
         Gioco = gioco;
     }
 
-    public void setClassifica(Giocatore[] classifica) {
+    public void setClassifica(ArrayList <Giocatore> classifica) {
         this.classifica = classifica;
     }
 
@@ -57,54 +49,58 @@ public class Main {
          * */
         int nGiocatori;
         String nom;
-         String risposta=" ";
-         boolean controll=false;
-        Giocatore [] g = new Giocatore[4];
+        String risposta;
+        boolean controll=false;
+        Giocatore giocatore;
+        ArrayList <Giocatore> g= new ArrayList <>(4);
         System.out.println("Quanti giocatori partecipano?");
         nGiocatori=in.nextInt();
         for(int i=0;i<nGiocatori;i++){
-        System.out.println("Inserisci il nome del  partecipante");
-                  nom=in.next();
-                  g[i] = new Giocatore(nom,1);
+            System.out.println("Inserisci il nome del  partecipante");
+            nom=in.next();
+            giocatore = new Giocatore(nom, 1);
+            g.add(giocatore);
         }
         Dado d = new Dado();
         Campo tab= new Campo();
-        while( controll=false  ){
+        while(!controll){
         for(int j=0;j<nGiocatori;j++){
-            
-          if (g[j].inGioco==false){
-          tab.doEffects(g, j,nGiocatori);
+            Giocatore giocatoreCopia = new Giocatore(g.get(j).getNome(), g.get(j).getPosizione());
+            giocatoreCopia.setInGioco(g.get(j).getInGioco());
+          if (!g.get(j).inGioco){
+          tab.doEffects(g,giocatoreCopia,j,nGiocatori);
           }
           else{
-         System.out.println("vuoi continuare? si/no"); 
-         while(risposta != "si" && risposta != "no"){
-         System.out.println("Inserisci la risposta, si o no?"); 
-         risposta=in.next();
+              System.out.println("vuoi continuare? si/no");
+              risposta=in.next();
+              while(!risposta.equalsIgnoreCase("si") && !risposta.equalsIgnoreCase("no")){
+                System.out.println("Risposta non chiara, si o no?");
+                risposta=in.next();
          }
-         if (risposta == "no"){
-         g[j].Interrompi();
-         break;
+         if (risposta.equalsIgnoreCase("no")){
+             g.get(j).Interrompi();
+             break;
         }
         d.lancia();
         out.println(d.toString());
-        g[j].Spostati(d.risultato);
-        if(g[j].posizione==31 || g[j].posizione==52){
-         g[j].inGioco=false;   
+        g.get(j).Spostati(d.risultato);
+        if(g.get(j).posizione==31 || g.get(j).posizione==52){
+         g.set(j,giocatoreCopia).setInGioco(false);
         }
-        tab.doEffects(g, j,nGiocatori);
+        tab.doEffects(g,giocatoreCopia,j,nGiocatori);
         
         
         
-        if(g[j].posizione<=63){
+        /*if(g.get(j).getPosizione()<=63){
         break;    
-        }
-        
+        }*/
+
           }
         }
         for(int l=0; l<nGiocatori;l++){
-        if(g[l].posizione<=63){
-        System.out.println(g[l].nome + "Hai vinto!"); 
-        controll=true;  
+        if(g.get(l).getPosizione()<=63){
+        System.out.println(g.get(l).getNome() + " hai vinto!");
+        controll=true;
         }    
         }
        

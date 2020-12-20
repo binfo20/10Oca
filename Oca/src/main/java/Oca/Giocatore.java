@@ -5,7 +5,7 @@
  */
 package Oca;
 
-/**
+/*
  *
  * @author gramm
  */
@@ -21,6 +21,26 @@ public class Giocatore implements Serializable {
     public Giocatore(String nome, int posizione) {
         this.nome = nome;
         this.posizione = posizione;
+    }
+
+    public void setInGioco(boolean inGioco) {
+        this.inGioco = inGioco;
+    }
+
+    public boolean getInGioco(){
+        return inGioco;
+    }
+
+    public int getPosizione() {
+        return posizione;
+    }
+
+    public void setPosizione(int posizione) {
+        this.posizione = posizione;
+    }
+
+    public String getNome() {
+        return nome;
     }
 
     public void SavePosizione() {

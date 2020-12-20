@@ -15,13 +15,13 @@ public class CasellaSpeciale extends Casella{
 
 
     public void isSpeciale(){
-        if(tipo!="Normale")speciale=true;
+        if(getTipo().equals("Normale"))speciale=true;
         else speciale=false;
     }
 
     public String setEffects(Giocatore g){
-    if(speciale == true){
-        switch(tipo){
+    if(speciale){
+        switch(getTipo()){
         case "ponte": g.posizione=g.posizione-3;  break;
         case "locanda":   break;       
         case "pozzo":   break;

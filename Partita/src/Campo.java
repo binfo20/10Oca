@@ -1,11 +1,12 @@
+import java.util.ArrayList;
 
 
 public class Campo {
-    Casella[] c = new Casella[64];
+    ArrayList <Casella> c = new ArrayList<Casella>(64);
 
-    public void setC(Casella[] c) {
+    public void setC(ArrayList <Casella> c) {
         this.c = c;
-        c[6].tipo="Ponte";
+        c.set(6,);
         c[19].tipo="Locanda";
         c[31].tipo="Pozzo";
         c[42].tipo="Labirinto";

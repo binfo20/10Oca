@@ -10,6 +10,7 @@ package Oca;
  * @author gramm
  */
 import java.io.*;
+import java.util.ArrayList;
 
 public class Impostazioni implements Serializable{
 
@@ -74,8 +75,11 @@ public class Impostazioni implements Serializable{
      Variabile di ritorno String
      Finisce la partita //da finire, aspetto le altre classi per le prove
      */
-    public String Esci(Giocatore[] g){
-        for(int i=0;i<4;i++)if(g[i]!=null)g[i].inGioco=false;
+    public String Esci(ArrayList <Giocatore> g, Giocatore giocatore){
+        for(int i=0;i<4;i++) {
+            giocatore.setInGioco(false);
+            if (g.get(i) != null) g.set(i, giocatore).inGioco = false;
+        }
         return "PARTITA FINITA";
     }
 }

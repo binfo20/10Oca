@@ -4,74 +4,80 @@
  * and open the template in the editor.
  */
 package Oca;
-
+import java.util.ArrayList;
 /**
  *
  * @author gramm
  */
 public class Campo {
-    Casella[] c = new Casella[64];
-    int[] cTurni=new int[4];
+    ArrayList <Casella> c = new ArrayList <>(64);
+    ArrayList <Integer> cTurni=new ArrayList <>(4);
 
-    public void inizializza(){
-    for (int i=0;i<4;i++){
-    cTurni[i]=0;
+    public void inizializzaCTurni() {
+        for (int i = 0; i < cTurni.toArray().length; i++) {
+            cTurni.set(i, 0);
+        }
     }
+    public void inizializzaC(){
+        for (int i = 0; i < c.toArray().length; i++) {
+            Casella casella = new Casella();
+            casella.setTipo("Normale");
+            c.add(casella);
+        }
     }
-    public void setC(Casella[] c) {
+    public void setC(ArrayList <Casella> c) {
         this.c = c;
-        c[6].tipo="Ponte";
-        c[19].tipo="Locanda";
-        c[31].tipo="Pozzo";
-        c[42].tipo="Labirinto";
-        c[52].tipo="Prigione";
-        c[58].tipo="Scheletro";
-        c[63].tipo="Arrivo";
+        Casella casella = new Casella();
+        c.set(6,casella).setTipo("Ponte");//Ponte 6
+        System.out.println(c.get(6));
+        c.set(19,casella).setTipo("Locanda");
+        System.out.println(c.get(19));
+        c.set(31,casella).setTipo("Pozzo");
+        c.set(42,casella).setTipo("Labirinto");
+        c.set(52,casella).setTipo("Prigione");
+        c.set(58,casella).setTipo("Scheletro");
+        c.set(63,casella).setTipo("Arrivo");
     }
 
-    public void doEffects(Giocatore g[],int j,int nGiocatori){
-        switch(g[j].posizione){
-        case 6: g[j].posizione=g[j].posizione-3;  break;
-        case 19:  Pause(g,j); break;       
-        case 31:    Jail(g,j,nGiocatori); break;
-        case 42:  g[j].posizione=39;  break;
-        case 52:  Jail(g,j,nGiocatori);                 break;
-        case 58: g[j].posizione=1;  break;
+    public void doEffects(ArrayList<Giocatore> g, Giocatore giocatoreCopia, int j,int nGiocatori){
+        switch(g.get(j).posizione){
+        case 6: g.get(j).posizione=g.get(j).posizione-3;  break;
+        case 19:  Pause(g,giocatoreCopia,j); break;
+        case 31:
+            case 52:
+                Jail(g,giocatoreCopia,j,nGiocatori); break;
+        case 42:  giocatoreCopia.setPosizione(39);  g.set(j, giocatoreCopia);  break;
+            case 58:  giocatoreCopia.setPosizione(1); g.set(j,giocatoreCopia);  break;
         case 63:   break;
         
         }
     }
-        public void Jail(Giocatore g[],int j,int nGiocatori){
-           for (int i=0;i<nGiocatori;i++){
-               if(g[i].posizione==g[j].posizione && i!=j){
-               g[i].inGioco=true;
-               g[i].posizione++;
+        public void Jail(ArrayList <Giocatore> g, Giocatore giocatore, int j,int nGiocatori){
+
+            for (int i=0;i<nGiocatori;i++){
+               if(g.get(i).posizione==g.get(j).posizione && i!=j){
+                   int temp;
+                   g.set(i,giocatore).setInGioco(true);
+                   temp = giocatore.getPosizione();
+                   temp ++;
+                   g.set(i,giocatore).setPosizione(temp);
                }
             }
       
         }
         
-        public void Pause(Giocatore g[],int j){
-        cTurni[j]++;
-        if( cTurni[j]==3){
-        g[j].inGioco=true;
-        cTurni[j]=0;       
+        public void Pause(ArrayList <Giocatore> g, Giocatore giocatore,int j){
+        int temp;
+        temp = cTurni.get(j);
+        temp++;
+        cTurni.set(j, temp);
+        if( cTurni.get(j)==3){
+        g.set(j, giocatore).setInGioco(true);
+        cTurni.set(j, 0);
         }
-        cTurni[j]++;
-        
-     
-       
-                        }
-        
-        
-         
-        
-        
-        
-        
-        
-        
-        
-        
-    
+        temp = cTurni.get(j);
+        temp++;
+        cTurni.set(j, temp);
+        }
+
 }
