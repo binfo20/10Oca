@@ -40,12 +40,11 @@ public class Campo {
     }
 
     public void doEffects(ArrayList<Giocatore> g, Giocatore giocatoreCopia, int j,int nGiocatori){
-        switch(g.get(j).posizione){
-        case 6: g.get(j).posizione=g.get(j).posizione-3;  break;
+        switch(g.get(j).getPosizione()){
+        case 6: g.get(j).setPosizione(g.get(j).getPosizione()-3);  break;
         case 19:  Pause(g,giocatoreCopia,j); break;
-        case 31:
-            case 52:
-                Jail(g,giocatoreCopia,j,nGiocatori); break;
+        case 31: Jail(g,giocatoreCopia,j, nGiocatori);
+            case 52: Jail(g,giocatoreCopia,j,nGiocatori); break;
         case 42:  giocatoreCopia.setPosizione(39);  g.set(j, giocatoreCopia);  break;
             case 58:  giocatoreCopia.setPosizione(1); g.set(j,giocatoreCopia);  break;
         case 63:   break;
@@ -55,7 +54,7 @@ public class Campo {
         public void Jail(ArrayList <Giocatore> g, Giocatore giocatore, int j,int nGiocatori){
 
             for (int i=0;i<nGiocatori;i++){
-               if(g.get(i).posizione==g.get(j).posizione && i!=j){
+               if(g.get(i).getPosizione()==g.get(j).getPosizione() && i!=j){
                    int temp;
                    g.set(i,giocatore).setInGioco(true);
                    temp = giocatore.getPosizione();
@@ -75,9 +74,9 @@ public class Campo {
         g.set(j, giocatore).setInGioco(true);
         cTurni.set(j, 0);
         }
-        temp = cTurni.get(j);
-        temp++;
-        cTurni.set(j, temp);
+        //temp = cTurni.get(j);
+        //temp++;
+        //cTurni.set(j, temp);
         }
 
 }

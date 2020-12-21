@@ -13,10 +13,10 @@ import java.io.Serializable;
 
 public class Giocatore implements Serializable {
 
-    public String nome;
-    public int posizione;
-    public boolean inGioco=true;
-    public int turni=3;
+    private String nome;
+    private int posizione;
+    private boolean inGioco=true;
+    private int turni=3;
 
     public Giocatore(String nome, int posizione) {
         this.nome = nome;
@@ -43,6 +43,9 @@ public class Giocatore implements Serializable {
         return nome;
     }
 
+    public void setNome(String nome){
+        this.nome = nome;
+    }
     public void SavePosizione() {
 
     }

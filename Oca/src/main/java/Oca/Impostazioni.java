@@ -23,7 +23,7 @@ public class Impostazioni implements Serializable{
     public String Salva(Giocatore g){
         ObjectOutputStream output =null;
         try{
-            output = new ObjectOutputStream(new FileOutputStream("Giocatore "+g.nome+".dat"));
+            output = new ObjectOutputStream(new FileOutputStream("Giocatore "+g.getNome()+".dat"));
         }
         catch(FileNotFoundException e){
 
@@ -52,7 +52,7 @@ public class Impostazioni implements Serializable{
     public String Riprendi(Giocatore g){
         ObjectInputStream ois = null;
         try{
-            ois = new ObjectInputStream(new FileInputStream("Giocatore "+g.nome+".dat"));
+            ois = new ObjectInputStream(new FileInputStream("Giocatore "+g.getNome()+".dat"));
         }catch(FileNotFoundException e){
 
         } catch (IOException e) {
@@ -66,7 +66,7 @@ public class Impostazioni implements Serializable{
         } catch (ClassNotFoundException e1) {
             e1.printStackTrace();
         }
-        g.inGioco=true;
+        g.setInGioco(true);
         return "Riprende a giocare "+ g.toString() ;
     }
 
@@ -78,7 +78,7 @@ public class Impostazioni implements Serializable{
     public String Esci(ArrayList <Giocatore> g, Giocatore giocatore){
         for(int i=0;i<4;i++) {
             giocatore.setInGioco(false);
-            if (g.get(i) != null) g.set(i, giocatore).inGioco = false;
+            if (g.get(i) != null) g.set(i, giocatore).setInGioco(false);
         }
         return "PARTITA FINITA";
     }

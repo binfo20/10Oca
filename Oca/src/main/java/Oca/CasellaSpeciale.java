@@ -11,7 +11,7 @@ package Oca;
  */
 public class CasellaSpeciale extends Casella{
 
-    boolean speciale=true;
+    private boolean speciale=true;
 
 
     public void isSpeciale(){
@@ -19,15 +19,15 @@ public class CasellaSpeciale extends Casella{
         else speciale=false;
     }
 
-    public String setEffects(Giocatore g){
+    public String setEffects(Giocatore g , int j){
     if(speciale){
         switch(getTipo()){
-        case "ponte": g.posizione=g.posizione-3;  break;
+        case "ponte": g.setPosizione(g.getPosizione()-3);  break;
         case "locanda":   break;       
         case "pozzo":   break;
-        case "labirinto":  g.posizione=39;  break;
+        case "labirinto":  g.setPosizione(39);  break;
         case "prigione":                    break;
-        case "scheletro": g.posizione=1;  break;
+        case "scheletro": g.setPosizione(1);  break;
         case "arrivo":   break;
         
         }

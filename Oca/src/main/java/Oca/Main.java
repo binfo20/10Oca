@@ -27,7 +27,7 @@ import java.util.Scanner;
 
 public class Main {
     ArrayList <Giocatore> classifica = new ArrayList<>(4); /**classifica dei giocatori*/
-    boolean Gioco=true; /**Effettuo dei controlli tramite questa variabile*/
+    private boolean Gioco=true; /**Effettuo dei controlli tramite questa variabile*/
 
     public boolean isGioco() {
         return Gioco;
@@ -63,17 +63,20 @@ public class Main {
         }
         Dado d = new Dado();
         Campo tab= new Campo();
+        tab.inizializzaCTurni();
         while(!controll){
         for(int j=0;j<nGiocatori;j++){
             Giocatore giocatoreCopia = new Giocatore(g.get(j).getNome(), g.get(j).getPosizione());
             giocatoreCopia.setInGioco(g.get(j).getInGioco());
-          if (!g.get(j).inGioco){
+          if (!g.get(j).getInGioco()){
+             System.out.println(g.get(j).getNome() + " sei nella casella : "+g.get(j).getPosizione());
           tab.doEffects(g,giocatoreCopia,j,nGiocatori);
           }
           else{
+               System.out.println(g.get(j).getNome() + " sei nella casella : "+g.get(j).getPosizione());
               System.out.println("vuoi continuare? si/no");
               risposta=in.next();
-              while(!risposta.equalsIgnoreCase("si") && !risposta.equalsIgnoreCase("no")){
+              while(!risposta.equalsIgnoreCase("s") && !risposta.equalsIgnoreCase("no")){
                 System.out.println("Risposta non chiara, si o no?");
                 risposta=in.next();
          }
@@ -83,22 +86,22 @@ public class Main {
         }
         d.lancia();
         out.println(d.toString());
-        g.get(j).Spostati(d.risultato);
-        if(g.get(j).posizione==31 || g.get(j).posizione==52){
+        g.get(j).Spostati(d.getRisultato());
+        if(g.get(j).getPosizione()==31 || g.get(j).getPosizione()==52){
          g.set(j,giocatoreCopia).setInGioco(false);
         }
         tab.doEffects(g,giocatoreCopia,j,nGiocatori);
         
         
         
-        /*if(g.get(j).getPosizione()<=63){
+        if(g.get(j).getPosizione()>=63){
         break;    
-        }*/
+        }
 
           }
         }
         for(int l=0; l<nGiocatori;l++){
-        if(g.get(l).getPosizione()<=63){
+        if(g.get(l).getPosizione()>=63){
         System.out.println(g.get(l).getNome() + " hai vinto!");
         controll=true;
         }    

@@ -10,7 +10,7 @@ package Oca;
  * @author gramm
  */
 public class Dado {
-    public short risultato;
+    private short risultato;
     private short facce = 6;
 
     public short lancia(){
@@ -18,6 +18,10 @@ public class Dado {
         return risultato;
     }
 
+    public int getRisultato(){
+     return risultato;   
+    }
+    
     @Override
     public String toString() {
         return "Dado{" +
