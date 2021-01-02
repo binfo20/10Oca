@@ -42,7 +42,7 @@ public class Campo {
     public void doEffects(ArrayList<Giocatore> g, Giocatore giocatoreCopia, int j,int nGiocatori){
         switch(g.get(j).getPosizione()){
         case 6: g.get(j).setPosizione(g.get(j).getPosizione()-3);  break;
-        case 19:  Pause(g,giocatoreCopia,j); break;
+        case 19: // Pause(g,giocatoreCopia,j); break;
         case 31: Jail(g,giocatoreCopia,j, nGiocatori);
             case 52: Jail(g,giocatoreCopia,j,nGiocatori); break;
         case 42:  giocatoreCopia.setPosizione(39);  g.set(j, giocatoreCopia);  break;

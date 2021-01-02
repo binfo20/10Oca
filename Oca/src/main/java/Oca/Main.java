@@ -76,7 +76,7 @@ public class Main {
                System.out.println(g.get(j).getNome() + " sei nella casella : "+g.get(j).getPosizione());
               System.out.println("vuoi continuare? si/no");
               risposta=in.next();
-              while(!risposta.equalsIgnoreCase("s") && !risposta.equalsIgnoreCase("no")){
+              while(!risposta.equalsIgnoreCase("si") && !risposta.equalsIgnoreCase("no")){
                 System.out.println("Risposta non chiara, si o no?");
                 risposta=in.next();
          }
