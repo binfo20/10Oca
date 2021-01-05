@@ -17,7 +17,11 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import java.util.Random;
 
 
 /**
@@ -25,42 +29,4 @@ import javafx.stage.Stage;
  *
  * @author gramm
  */
-public class FXMLGiocoDellOcaController implements Initializable {
 
-    
-   @FXML private TextField G1;
-   @FXML private TextField G2;
-   @FXML private TextField G3;
-   @FXML private TextField G4;
-   @FXML private Label Schermo;
-   String[] nomi = new String[4];
-   String str;
-   
-    @FXML
-      private void onNameButtonPressed() throws IOException{
-       str = G1.getText(); 
-       nomi[0]=str;
-        
-       str = G2.getText(); 
-       nomi[1]=str;
-        
-       str = G3.getText(); 
-       nomi[2]=str;
-        
-       str = G4.getText(); 
-       nomi[3]=str;
-     
-    }
-    
-    
-    
-    
-    /**
-     * Initializes the controller class.
-     */
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
-    
-}
