@@ -65,7 +65,7 @@ public class Main {
         for(int j=0;j<nGiocatori;j++){
             Giocatore giocatoreCopia = new Giocatore(g.get(j).getNome(), g.get(j).getPosizione());
             giocatoreCopia.setInGioco(g.get(j).getInGioco());
-          if (g.get(j).getInGioco()==false){
+          if (!g.get(j).getInGioco()){
              System.out.println(g.get(j).getNome() + " sei nella casella : "+g.get(j).getPosizione());
              System.out.println(d.toString());
               System.out.println(tab.ShowEffects(g.get(j).getPosizione()));

@@ -29,7 +29,7 @@ public class Campo {
         this.c = c;
         Casella casella = new Casella();
         c.set(6,casella).setTipo("Ponte");
-        c.set(19,casella).setTipo("Locanda");
+        //c.set(19,casella).setTipo("Locanda");
         c.set(31,casella).setTipo("Pozzo");
         c.set(42,casella).setTipo("Labirinto");
         c.set(52,casella).setTipo("Prigione");
@@ -42,7 +42,7 @@ public class Campo {
             int pos=a;
             switch(pos){
         case  6: str="Sei caduto dal ponte"; break;
-        case 19: str="Ti fermi alla locanda";  break;       
+        //case 19: str="Ti fermi alla locanda";  break;
         case 31: str="Cadi nel pozzo"; break;
         case 52: str="Ti perdi nel labirinto"; break;
         case 42: str="Sei stato catturato";  break;
@@ -55,7 +55,7 @@ public class Campo {
     public void doEffects(ArrayList<Giocatore> g, Giocatore giocatoreCopia, int j,int nGiocatori){
         switch(g.get(j).getPosizione()){
         case 6: g.get(j).setPosizione(g.get(j).getPosizione()-3);  break;
-        case 19:  Pause(g,giocatoreCopia,j); break;
+        //case 19:  Pause(g,giocatoreCopia,j); break;
         case 31: Jail(g,giocatoreCopia,j, nGiocatori);
         case 52: Jail(g,giocatoreCopia,j,nGiocatori); break;
         case 42:  giocatoreCopia.setPosizione(39);  g.set(j, giocatoreCopia);  break;
