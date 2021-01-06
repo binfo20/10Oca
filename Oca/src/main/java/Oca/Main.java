@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Oca;
 
 /**
@@ -15,7 +10,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 
-/***
+/*
  * MI pare andiamo bene.
  * Manca il javadoc --> Messo
  * Togliete i file .class dal controllo di git, è inutile e spreca banda
@@ -26,8 +21,8 @@ import java.util.Scanner;
  */
 
 public class Main {
-    ArrayList <Giocatore> classifica = new ArrayList<>(4); /**classifica dei giocatori*/
-    private boolean Gioco=true; /**Effettuo dei controlli tramite questa variabile*/
+    ArrayList <Giocatore> classifica = new ArrayList<>(4); /*classifica dei giocatori*/
+    private boolean Gioco=true; /*Effettuo dei controlli tramite questa variabile*/
 
     public boolean isGioco() {
         return Gioco;
@@ -64,17 +59,27 @@ public class Main {
         Dado d = new Dado();
         Campo tab= new Campo();
         tab.inizializzaCTurni();
+        tab.inizializzaC();
+        //tab.setC(tab.c);
         while(!controll){
         for(int j=0;j<nGiocatori;j++){
             Giocatore giocatoreCopia = new Giocatore(g.get(j).getNome(), g.get(j).getPosizione());
             giocatoreCopia.setInGioco(g.get(j).getInGioco());
-          if (!g.get(j).getInGioco()){
+          if (g.get(j).getInGioco()==false){
              System.out.println(g.get(j).getNome() + " sei nella casella : "+g.get(j).getPosizione());
-          tab.doEffects(g,giocatoreCopia,j,nGiocatori);
+             System.out.println(d.toString());
+              System.out.println(tab.ShowEffects(g.get(j).getPosizione()));
+            // tab.doEffects(g,giocatoreCopia,j,nGiocatori);
+
           }
           else{
                System.out.println(g.get(j).getNome() + " sei nella casella : "+g.get(j).getPosizione());
-              System.out.println("vuoi continuare? si/no");
+               d.lancia();
+               System.out.println(d.toString());
+                g.get(j).Spostati(d.getRisultato());
+                d.azzera();
+               System.out.println(tab.ShowEffects(g.get(j).getPosizione()));
+               System.out.println("vuoi continuare? si/no");
               risposta=in.next();
               while(!risposta.equalsIgnoreCase("si") && !risposta.equalsIgnoreCase("no")){
                 System.out.println("Risposta non chiara, si o no?");
@@ -84,11 +89,11 @@ public class Main {
              g.get(j).Interrompi();
              break;
         }
-        d.lancia();
-        out.println(d.toString());
-        g.get(j).Spostati(d.getRisultato());
-        if(g.get(j).getPosizione()==31 || g.get(j).getPosizione()==52){
+         
+       // g.get(j).Spostati(d.getRisultato());
+        if(g.get(j).getPosizione()==31 || g.get(j).getPosizione()==52 ){
          g.set(j,giocatoreCopia).setInGioco(false);
+        
         }
         tab.doEffects(g,giocatoreCopia,j,nGiocatori);
         

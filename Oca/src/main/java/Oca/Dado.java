@@ -17,7 +17,9 @@ public class Dado {
         risultato = (short)(Math.random() * facce + 1);
         return risultato;
     }
-
+    public void azzera(){
+     risultato=0;
+    }
     public int getRisultato(){
      return risultato;   
     }
