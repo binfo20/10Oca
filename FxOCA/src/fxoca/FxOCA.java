@@ -547,7 +547,6 @@ public class FxOCA extends Application implements Initializable {
                 }
                 break;
         }
-        System.out.println(turno);
         Schermo.setText("Turno di "+ nomi[turno-1]);
         if (turno == n_part) {
             turno = 1;
