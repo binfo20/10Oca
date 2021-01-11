@@ -1,19 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Tab?>
-<?import javafx.scene.control.TabPane?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.effect.ImageInput?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.shape.Circle?>
-<?import javafx.scene.shape.Rectangle?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
 
 <TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="568.0" prefWidth="823.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fxoca.FxOCA">
    <tabs>
@@ -208,11 +200,12 @@
                   </Rectangle>
                   <Label id="Schermo" fx:id="Schermo" layoutX="35.0" layoutY="420.0" prefHeight="30.0" prefWidth="154.0" />
                   <Circle id="g1" fx:id="g1" fill="DODGERBLUE" layoutX="35.0" layoutY="20.0" radius="11.0" stroke="BLACK" strokeType="INSIDE" />
-                  <Circle fx:id="g2" fill="#ff1f1f" layoutX="35.0" layoutY="50.0" radius="11.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Circle fx:id="g2" fill="#ff2121" layoutX="35.0" layoutY="50.0" radius="11.0" stroke="BLACK" strokeType="INSIDE" />
                   <Circle fx:id="g3" fill="#1fff3b" layoutX="90.0" layoutY="20.0" radius="11.0" stroke="BLACK" strokeType="INSIDE" />
                   <Circle fx:id="g4" fill="#f6ff1f" layoutX="90.0" layoutY="50.0" radius="11.0" stroke="BLACK" strokeType="INSIDE" />
-                  <Button layoutX="742.0" layoutY="18.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="66.0" onAction="#onSaveButtonPressed" text="Salva" />
-                  <Button layoutX="744.0" layoutY="68.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="62.0" onAction="#onLoadButtonPressed" text="Carica" />
+                  <Button layoutX="742.0" layoutY="18.0" mnemonicParsing="false" onAction="#onSaveButtonPressed" prefHeight="26.0" prefWidth="66.0" text="Salva" />
+                  <Button layoutX="744.0" layoutY="68.0" mnemonicParsing="false" onAction="#onLoadButtonPressed" prefHeight="26.0" prefWidth="62.0" text="Carica" />
+                  <Circle fx:id="gturno" fill="DODGERBLUE" layoutX="68.0" layoutY="471.0" opacity="0.0" radius="11.0" stroke="BLACK" strokeType="INSIDE" />
                </children></AnchorPane>
          </content>
       </Tab>
